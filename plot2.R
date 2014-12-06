@@ -20,9 +20,14 @@ power <- read.csv2(file = "./data/household_power_consumption.txt",
 # the case.
 power <- subset(x = power, subset = Date %in% c("1/2/2007", "2/2/2007"))
 
+# Set the date-time for each reading
+power$datetime <- paste(power$Date, power$Time)
+
+# Format the date-time as a time object (POSIXct)
+power$datetime <- strptime(x = power$datetime, format = "%d/%m/%Y %H:%M:%S")
 
 # Prepare the graphics device
-png(filename = "plot2.png", width = 480, height = 480)
+png(filename = "plot2.png", width = 480, height = 480, bg = "transparent")
 
 
 # Create the plot

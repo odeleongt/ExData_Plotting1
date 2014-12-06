@@ -22,7 +22,7 @@ power <- subset(x = power, subset = Date %in% c("1/2/2007", "2/2/2007"))
 
 
 # Prepare the graphics device
-png(filename = "plot1.png", width = 480, height = 480)
+png(filename = "plot1.png", width = 480, height = 480, bg = "transparent")
 
 
 # Create the plot
