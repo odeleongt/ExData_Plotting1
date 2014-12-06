@@ -38,7 +38,7 @@ plot(x = power$datetime,
 		 y = power$Global_active_power,
 		 type = "l",
 		 xlab = "",
-		 ylab = "Global Active Power (kilowatts)",
+		 ylab = "Global Active Power",
 		 axes = FALSE)
 box(col = "grey50")  # Fainter lines for the box
 axis(side = 2, at = seq(0,6, by = 2))
