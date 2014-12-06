@@ -31,7 +31,17 @@ png(filename = "plot2.png", width = 480, height = 480, bg = "transparent")
 
 
 # Create the plot
-
+plot(x = power$datetime,
+		 y = power$Global_active_power,
+		 type = "l",
+		 xlab = "",
+		 ylab = "Global Active Power (kilowatts)",
+		 axes = FALSE)
+box(col = "grey50")  # Fainter lines for the box
+axis(side = 2, at = seq(0,6, by = 2))
+axis(side = 1, at = as.POSIXct(paste0("2007-02-0", 1:3)),
+		 labels = c("Thu", "Fri", "Sat"))
+	
 
 # Close the device to save the plot
 dev.off()
